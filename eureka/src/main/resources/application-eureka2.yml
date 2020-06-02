@@ -1,0 +1,14 @@
+server:
+  port: 8762
+
+
+
+
+eureka:
+  client:
+    region: dianxin
+
+
+  instance:
+    metadata-map:
+      zone: zone-2 # 电信2区

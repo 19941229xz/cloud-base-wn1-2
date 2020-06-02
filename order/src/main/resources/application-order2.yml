@@ -1,0 +1,11 @@
+server:
+  port: 5052
+
+
+eureka:
+  client:
+    region: dianxin
+
+  instance:
+    metadata-map:
+      zone: zone-2

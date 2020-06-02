@@ -1,0 +1,13 @@
+server:
+  port: 4043
+
+
+
+
+eureka:
+  client:
+    region: wangtong
+
+  instance:
+    metadata-map:
+      zone: zone-1

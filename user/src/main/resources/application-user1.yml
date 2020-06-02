@@ -1,0 +1,12 @@
+server:
+  port: 4041
+
+
+
+eureka:
+  client:
+    region: dianxin
+
+  instance:
+    metadata-map:
+      zone: zone-1

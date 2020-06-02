@@ -23,6 +23,13 @@ public class OrderController {
     private String appName;
 
 
+    @Value("${eureka.client.region}")
+    private String region;
+
+    @Value("${eureka.instance.metadata-map.zone}")
+    private String zone;
+
+
     @Autowired
     OrderServiceImpl orderService;
 
@@ -32,7 +39,7 @@ public class OrderController {
 
 
 
-        return MyRsp.success("我是："+appName+" 我的端口是："+port);
+        return MyRsp.success("我是："+appName+" 我的端口是："+port+" 所在区域："+region+" 所在机房："+zone);
     }
 
 

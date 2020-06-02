@@ -1,0 +1,16 @@
+server:
+  port: 5053
+
+
+
+
+
+
+
+eureka:
+  client:
+    region: wangtong
+
+  instance:
+    metadata-map:
+      zone: zone-1

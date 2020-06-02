@@ -1,0 +1,18 @@
+server:
+  port: 5051
+
+
+
+
+eureka:
+  client:
+    region: dianxin
+    prefer-same-zone-eureka: true  #优先选择同机房的eureka服务
+    availability-zones:
+      dianxin: zone-1,zone-2  #可以使用机房  当同机房服务不能使用 就会在这个列表里面去以此选择
+
+  instance:
+    metadata-map:
+      zone: dianxian-zone-1
+
+
