@@ -14,3 +14,31 @@ eureka:
 spring:
   application:
     name: user
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3000/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+
+
+
+
+#pagehelper配置
+pagehelper:
+  reasonable: true  #分页参数合理化
+  support-methods-arguments: true  #自动根据params配置获取分页参数
+  params: count=countsql
+
+
+
+
+#log配置
+
+
+
+logging:
+  level:
+    com:
+      example:
+        user:
+          dao: debug

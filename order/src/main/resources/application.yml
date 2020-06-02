@@ -9,6 +9,16 @@ server:
 spring:
   application:
     name: order
+  datasource:
+    url: jdbc:mysql://localhost:3000/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+pagehelper:
+  reasonable: true  #分页参数合理化
+  support-methods-arguments: true
+  params: count=countsql
 
 
 eureka:
@@ -16,3 +26,7 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+
+
+

@@ -3,6 +3,8 @@ package com.example.order.controller;
 
 import com.example.commonresource.entity.MyRsp;
 import com.example.commonresource.entity.Order;
+import com.example.order.service.OrderServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +21,10 @@ public class OrderController {
 
     @Value("${spring.application.name}")
     private String appName;
+
+
+    @Autowired
+    OrderServiceImpl orderService;
 
 
     @GetMapping("/hello")
@@ -40,6 +46,14 @@ public class OrderController {
 
     }
 
+
+
+    @PostMapping("/getByPage")
+    public Object getByPage(){
+
+
+        return MyRsp.success(orderService.getByPage());
+    }
 
 
 

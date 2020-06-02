@@ -4,6 +4,7 @@ package com.example.user.controller;
 import com.example.commonresource.entity.MyRsp;
 import com.example.commonresource.entity.Order;
 import com.example.user.feign.OrderFeign;
+import com.example.user.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,10 @@ public class UserController {
 
     @Autowired
     OrderFeign  orderFeign;
+
+
+    @Autowired
+    UserServiceImpl userService;
 
 
     @GetMapping("/visitOrderHello")
@@ -36,6 +41,11 @@ public class UserController {
     }
 
 
+    @PostMapping("/getUserByPage")
+    public Object getUserByPage(){
 
+
+        return userService.getByPage();
+    }
 
 }
