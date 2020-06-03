@@ -50,6 +50,14 @@ public class MyRsp {
         return this;
     }
 
+    public MyRsp code(int code){
+
+
+        this.setCode(code);
+
+        return this;
+    }
+
 
     public static MyRsp fail(){
 

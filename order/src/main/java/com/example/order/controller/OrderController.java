@@ -3,6 +3,8 @@ package com.example.order.controller;
 
 import com.example.commonresource.entity.MyRsp;
 import com.example.commonresource.entity.Order;
+import com.example.commonresource.entity.TextEmailEntity;
+import com.example.order.feign.MessageFeign;
 import com.example.order.service.OrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,13 +35,18 @@ public class OrderController {
     @Autowired
     OrderServiceImpl orderService;
 
+    @Autowired
+    MessageFeign messageFeign;
+
 
     @GetMapping("/hello")
     public Object hello() {
 
 
 
-        return MyRsp.success("我是："+appName+" 我的端口是："+port+" 所在区域："+region+" 所在机房："+zone);
+        return messageFeign.sendTextEmail(TextEmailEntity.setToAndText("2300819486@qq.com","test"));
+
+//        return MyRsp.success("我是："+appName+" 我的端口是："+port+" 所在区域："+region+" 所在机房："+zone);
     }
 
 

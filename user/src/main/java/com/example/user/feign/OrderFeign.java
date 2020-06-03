@@ -16,7 +16,7 @@ public interface OrderFeign {
 
 
     @GetMapping("/hello")
-    public String visitOrderHello();
+    public MyRsp visitOrderHello();
 
 
     @RequestMapping(method = RequestMethod.POST,value = "/getOrderHead")
