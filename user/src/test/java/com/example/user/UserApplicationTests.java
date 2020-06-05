@@ -2,11 +2,15 @@ package com.example.user;
 
 import com.example.commonresource.entity.User;
 import com.example.user.dao.UserMapper;
+import com.example.user.mq.StreamRabbitMq;
 import com.example.user.service.UserServiceImpl;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.core.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.messaging.support.MessageBuilder;
 
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -19,6 +23,10 @@ class UserApplicationTests {
 
     @Autowired
     UserMapper  userMapper;
+
+
+    @Autowired
+    StreamRabbitMq streamRabbitMq;
 
     @Test
     void contextLoads() {
@@ -46,6 +54,15 @@ class UserApplicationTests {
         }
 
 
+    }
+
+
+
+    @Test
+    public void testMq(){
+
+
+        streamRabbitMq.output().send(MessageBuilder.withPayload("now:"+new Date()).build());
     }
 
 }

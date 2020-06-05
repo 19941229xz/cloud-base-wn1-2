@@ -6,7 +6,7 @@ server:
 
 eureka:
   client:
-    region: wangtong
+    region: dianxin
 
   instance:
     metadata-map:

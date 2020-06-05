@@ -20,7 +20,7 @@ public class RedisServiceImpl implements RedisService {
 
         try {
             ValueOperations<String, String> operations = redisTemplate.opsForValue();
-             return operations.get(key);
+            return operations.get(key);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -39,5 +39,13 @@ public class RedisServiceImpl implements RedisService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+    @Override
+    public boolean delete(String key) {
+        return redisTemplate.delete(key);
+
+
     }
 }

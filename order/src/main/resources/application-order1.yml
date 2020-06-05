@@ -13,6 +13,6 @@ eureka:
 
   instance:
     metadata-map:
-      zone: dianxian-zone-1
+      zone: zone-1
 
 

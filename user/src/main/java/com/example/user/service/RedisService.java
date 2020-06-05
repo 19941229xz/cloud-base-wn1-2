@@ -10,5 +10,7 @@ public interface RedisService {
 
     public Object getKey(String key);
 
+    public boolean delete(String key);
+
 
 }

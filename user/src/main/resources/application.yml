@@ -22,6 +22,56 @@ spring:
     port: 6379
     host: localhost
     password:
+  sleuth:
+    enabled: true
+    sampler:
+      rate: 10
+      probability: 0.1
+  zipkin:
+    enabled: true
+#    base-url: http://localhost:9411
+    sender:
+      type: rabbit
+    rabbitmq:
+      addresses: 60.205.212.112
+
+  rabbitmq:
+    password: guest
+    username: guest
+    port: 5672
+    addresses: 60.205.212.112
+#  cloud:
+#    stream:
+#      bindings:
+#        input2:
+#          destination: input2
+#        input1:
+#          destination: input1
+
+
+
+
+#  cloud:
+#    stream:
+#      bindings:
+#        input:
+#          destination: queue.log.messages
+#          binder: myrabbit
+#          group: logMessage
+#        output:
+#          destination: queue.log.messages
+#          binder: myrabbit
+#      binders:
+#        myrabbit:
+#          type: rabbit
+
+
+
+
+
+order:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 
 
 
@@ -36,17 +86,12 @@ pagehelper:
 
 
 #log配置
-
-
-
 logging:
   level:
     com:
       example:
         user:
           dao: debug
-
-
 
 mybatis:
   mapper-locations: classpath:/mappers/*Mapper.xml
@@ -57,6 +102,7 @@ feign:
     enabled: false
 
 
+#开启sleuth链路追踪功能
 
 
 

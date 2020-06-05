@@ -24,7 +24,7 @@ public class EmailController {
 //        //模拟一个异常
 //        System.out.println(1/0);
 
-        emailServiceImpl.sendTextMail(emailEntity);
+//        emailServiceImpl.sendTextMail(emailEntity);
 
         return MyRsp.success("发送成功");
     }

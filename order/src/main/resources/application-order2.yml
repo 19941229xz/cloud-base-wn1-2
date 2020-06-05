@@ -8,4 +8,4 @@ eureka:
 
   instance:
     metadata-map:
-      zone: zone-2
+      zone: zone-1
